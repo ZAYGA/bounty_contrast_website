@@ -26,7 +26,7 @@
       margin-bottom: 10px;
     }
 
-    table {
+    .table-tittle{
       min-width: 300px;
       margin: 20px auto;
       width: auto;
@@ -34,13 +34,34 @@
       border-collapse: separate;
       border-spacing: 0;
       background-color: #0f0f0f;
-      cursor: pointer;
       color: aliceblue;
       border-radius: 15px;
       overflow: hidden;
     }
 
-    th, td {
+    .table-content{
+      min-width: 300px;
+      margin: 20px auto;
+      width: auto;
+      max-width: 1200px;
+      border-collapse: separate;
+      border-spacing: 0;
+      background-color: #0f0f0f;
+      color: aliceblue;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    tbody {
+      cursor: pointer;
+    }
+
+    thead th, td {
+      padding: 10px 40px;
+      text-align: left;
+    }
+
+    tbody th, td {
       padding: 10px 20px;
       text-align: left;
     }
@@ -161,7 +182,7 @@
         <h1><img src="Bounty-header.png" alt="illustration-bounty" style="width: 100%; max-width: 1200px; margin: 20px auto; display: block;"/></h1>
     </header>
 
-    <table>
+    <table class="table-tittle">
         <thead>
           <tr>
             <th>Vulnerability Type</th>
@@ -170,6 +191,9 @@
             <th>Description</th>
           </tr>
         </thead>
+    </table>
+
+    <table class="table-content">
         <tbody>
           <tr>
             <td>Fund Theft</td>
@@ -202,6 +226,7 @@
           <div class="overlay"></div>
           <button class="submit-btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScx4-lgxGqQ31pMuG7CMAPTciZnqZ9j1VWTl29Cavs4zD5loQ/viewform'"></button>
         </div>
+
     </main>
 
     <footer>
@@ -211,6 +236,14 @@
             <p><a href="terms_of_use.html" target="_blank">Terms of use</a></p>
         </div>
     </footer>
+    <script>
+        const rows = document.querySelectorAll('tbody tr'); // Cibler les lignes du tableau
 
+rows.forEach(row => {
+  row.addEventListener('click', () => {
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScx4-lgxGqQ31pMuG7CMAPTciZnqZ9j1VWTl29Cavs4zD5loQ/viewform';
+  });
+});
+    </script>
 </body>
 </html>
