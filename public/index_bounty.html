@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,28 +25,19 @@
       margin-bottom: 10px;
     }
 
-    .table-tittle{
+    table{
       min-width: 300px;
       margin: 20px auto;
       width: 75vw;
       border-collapse: separate;
       border-spacing: 0;
-      background-color: #0f0f0f;
       color: aliceblue;
       border-radius: 15px;
       overflow: hidden;
     }
 
     .table-content{
-      min-width: 300px;
-      margin: 20px auto;
-      width: 75vw;
-      border-collapse: separate;
-      border-spacing: 0;
       background-color: #0f0f0f;
-      color: aliceblue;
-      border-radius: 15px;
-      overflow: hidden;
     }
 
     tbody {
@@ -62,6 +53,18 @@
     th {
       background-color: #000000;
       color: #ffffff;
+    }
+
+    td:not(:first-child) {
+      border-left: none;
+    }
+
+    th:not(:first-child) {
+      border-left: none;
+    }
+    
+    tr:not(:first-child) td {
+      border-top: none;
     }
 
     thead tr th:nth-child(1),
@@ -86,9 +89,19 @@
 
     th:first-child {
       border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
     }
 
     th:last-child {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    tr:first-child td:first-child {
+      border-top-left-radius: 15px;
+    }
+
+    tr:first-child td:last-child {
       border-top-right-radius: 15px;
     }
 
@@ -179,6 +192,12 @@
     footer div a:hover {
         color: #b4b4b4;
     }
+    @media (max-width: 1600px) {
+      table,
+      footer {
+        width: 100% !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -223,11 +242,10 @@
           </tr>
         </tbody>
     </table>
-        <div class="btn-container">
-          <div class="overlay"></div>
-          <button class="submit-btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScx4-lgxGqQ31pMuG7CMAPTciZnqZ9j1VWTl29Cavs4zD5loQ/viewform'"></button>
-        </div>
-    </main>
+    <div class="btn-container">
+      <div class="overlay"></div>
+      <button class="submit-btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLScx4-lgxGqQ31pMuG7CMAPTciZnqZ9j1VWTl29Cavs4zD5loQ/viewform'"></button>
+    </div>
     <footer>
         <span></span>
         <div>
